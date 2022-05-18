@@ -7,9 +7,11 @@ const User = require('./user.model')(sequelize, DataTypes);
 
 User.hasMany(Post, {
     foreignKey: "userId",
+    as: "user",
 });
 Post.belongsTo(User, {
     foreignKey: "userId",
+    as: "user",
 });
 
 module.exports = {

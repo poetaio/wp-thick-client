@@ -5,9 +5,9 @@ const userService = require("./userService");
 const {User} = require("../models");
 
 class AuthService {
-    static async generateJwt(id) {
+    static async generateJwt(userId) {
         return jwt.sign(
-            { id },
+            { userId },
             process.env.JWT_SECRET,
             { expiresIn: '24h' }
         );
