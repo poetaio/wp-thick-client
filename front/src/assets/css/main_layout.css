@@ -1,0 +1,11 @@
+.html {
+  min-height: 100vh;
+}
+
+.main_layout__content_wrapper {
+  height: calc(100% - 50px);
+  max-height: calc(100% - 50px);
+  overflow-y: auto;
+  display: flex;
+  width: 100%;
+}
