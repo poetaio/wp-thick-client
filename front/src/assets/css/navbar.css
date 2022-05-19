@@ -1,0 +1,213 @@
+.navbar__wrapper {
+  max-width: 70px;
+  overflow-x: visible;
+  overflow-y: visible;
+  position: relative;
+}
+
+.navbar__curtain {
+  width: 100vw;
+  background-color: transparent;
+  z-index: -1;
+  height: 100vh;
+  position: fixed;
+}
+
+.navbar__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 15px 0 15px;
+  height: 100vh;
+  width: 70px;
+  z-index: 10;
+  background-color: #383845;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+  -webkit-transition: width .5s ease-in-out;
+  -moz-transition: width .5s ease-in-out;
+  -o-transition: width .5s ease-in-out;
+  transition: width .5s ease-in-out;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  /* position: 'absolute' */
+}
+
+.navbar__icon {
+  position: relative;
+  padding: 0;
+  /* border: 1px solid black; */
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  align-self: flex-start;
+  margin-bottom: 15px;
+}
+
+.navbar__icon_tooth {
+  background: url('../img/navbar/tooth.png') no-repeat;
+  background-size: 40px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+}
+
+.navbar__icon_dot {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  background: url('../img/navbar/dot_24.png') no-repeat;
+  background-size: 10px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+
+.navbar__main:hover .navbar__icon_dot {
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  transition: all .2s;
+}
+
+.navbar__main:hover {
+  width: 250px;
+  /* min-width: 250px; */
+}
+
+/* .navbar__main:hover + .navbar__curtain {
+  background-color: #626262;
+  opacity: 58%;
+  z-index: 3;
+  margin-top: -100vh;
+  // not used - margin-left: 250px;
+} */
+
+.navbar__item {
+  margin-top: 15px;
+  box-sizing: border-box;
+  border: solid transparent 1px;
+  padding: 5px;
+  cursor: pointer;
+  width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar__item_dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+}
+
+.navbar__item_dropdown_info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar__item_dropdown_dot {
+  width: 10px;
+  margin-left: -18px;
+  margin-right: 8px;
+}
+
+.navbar__item_dropdown_list {
+  margin-left: 65px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.navbar__item_dropdown_item {
+  margin-top: 6px;
+  border: solid transparent 1px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 3px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.navbar__item_dropdown--active {
+  cursor: default;
+}
+
+.navbar__item_dropdown_item--active {
+  background-color: #49495E;
+  cursor: default;
+}
+
+.navbar__item_dropdown_item:hover {
+  /* border: solid white 1px; */
+  background-color: #57576A;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.navbar__item_dropdown_item--active:hover {
+  border: solid transparent 1px;
+  background-color: #49495E;
+}
+
+.navbar__item_regular--active {
+  background-color: #49495E;
+  border-radius: 15px;
+  cursor: default;
+}
+
+.navbar__item_regular:hover {
+  /* border: solid white 1px; */
+  background-color: #57576A;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.navbar__item_regular--active:hover {
+  border: solid transparent 1px;
+  background-color: #49495E;
+}
+
+.navbar__item_image {
+  width: 30px;
+  height: 30px;
+  margin-right: 18px;
+}
+
+.navbar__item_image_patient {
+  margin-left: 3px;
+}
+
+.navbar__item_dropdown_arrow {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-self: flex-end;
+  margin-left: auto;
+}
+
+.navbar__item_dropdown_arrow--up {
+  transform: rotate(180deg);
+}
+
+/* .navbar__item_name {
+  visibility: hidden;
+  transition: all .3s;
+}
+
+.navbar__main:hover .navbar__item_name {
+  visibility: visible;
+} */
+
+/* .navbar__item_name--hidden {
+  visibility: hidden;
+} */

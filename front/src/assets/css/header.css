@@ -1,0 +1,10 @@
+.header__color {
+  background-color: #383845;
+}
+
+.header__profile_icon {
+  background: url('../img/profile-icon.png') no-repeat center;
+  width: 42px;
+  height: 40px;
+  cursor: pointer;
+}
