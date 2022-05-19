@@ -8,7 +8,7 @@ router.post('/', authMiddleware(), postController.create);
 router.get('/', postController.getAllPaginated);
 router.get('/:postId', postController.getOne);
 router.put('/:postId', authMiddleware(), postController.update);
-router.delete('/:postId', postController.delete);
+router.delete('/:postId', authMiddleware(), postController.delete);
 router.get('/all', postController.getAll);
 
 module.exports = router;
