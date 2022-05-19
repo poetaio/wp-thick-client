@@ -7,7 +7,8 @@ class PostService {
     }
 
     async getAllPaginated(limit, offset) {
-        return await Post.findAndCountAll({ limit, offset });
+        const { count, rows } = await Post.findAndCountAll({ limit, offset });
+        return { count, posts: rows };
     }
 
     async getAll() {
@@ -15,7 +16,14 @@ class PostService {
     }
 
     async getOne(postId) {
-        return await Post.findOne({ where: { postId } });
+        return await Post.findOne({
+            where: { postId },
+            attributes: ['postId', 'title', 'text', "createdAt"],
+            include: {
+                association: "user",
+                attributes: ['userId', 'username', 'firstName', 'lastName']
+            },
+        });
     }
 
     async update(postId, title, text) {

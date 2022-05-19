@@ -4,7 +4,7 @@ const {httpStatusCodes} = require("../utils");
 class PostController {
     async create(req, res, next) {
         try {
-            const { userId } = req;
+            const { user: { userId } } = req;
             const { title, text } = req.body;
             const postId = await postService.create(userId, title, text);
             return res.status(httpStatusCodes.OK).json({postId });
@@ -19,7 +19,7 @@ class PostController {
             limit = Number.parseInt(limit) || 10;
             page = Number.parseInt(page) || 1;
             const offset = limit * (page - 1);
-            const posts = await postService.getAllPaginated(page, offset);
+            const posts = await postService.getAllPaginated(limit, offset);
 
             return res.status(httpStatusCodes.OK).json(posts);
         } catch (e) {

@@ -5,9 +5,9 @@ const userService = require("./userService");
 const {User} = require("../models");
 
 class AuthService {
-    static async generateJwt(id) {
+    static async generateJwt(userId) {
         return jwt.sign(
-            { id },
+            { userId },
             process.env.JWT_SECRET,
             { expiresIn: '24h' }
         );
@@ -24,8 +24,8 @@ class AuthService {
 
     // returns generated jwt
     async login(username, password) {
-        await User.create({ username: "marta", password: await AuthService.hashPassword(password), firstName: "Marta", lastName: "Martenko" });
-        await User.create({ username: "vasyl", password: await AuthService.hashPassword(password), firstName: "Vasyl", lastName: "Vasylenko" });
+        // await User.create({ username: "marta", password: await AuthService.hashPassword(password), firstName: "Marta", lastName: "Martenko" });
+        // await User.create({ username: "vasyl", password: await AuthService.hashPassword(password), firstName: "Vasyl", lastName: "Vasylenko" });
         const user = await userService.getOneByUsername(username);
         if (!user || !bcrypt.compareSync(password, user.password))
             throw new UnauthorizedError(`Username or password is incorrect`)
